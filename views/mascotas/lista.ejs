@@ -1,7 +1,7 @@
 <!-- Esta es la pagina mostrada en /mascotas-->
  <header>
     <div>
-        <p>CATALOGO</p>
+        <h2 class="catalogo">CATALOGO</h2>
         <h1>
             <%= titulo %>
         </h1>
@@ -12,12 +12,12 @@
  <% if (adopcionMascotas.length===0) { %>
     <p>No hay mascotas para mostrar</p>
     <% } else { %>
-        <section>
+        <section class="grilla">
             <% adopcionMascotas.forEach((mascota) => { %>
                 <article class="tarjeta">
                     <p>
                         Especie: <%= mascota.especie %>
-                    </p>
+                    </p> 
                     <p>
                          Nombre: <%= mascota.nombre %>
                     </p>
@@ -30,8 +30,9 @@
                     <p>
                         Estado: <%= mascota.estado %>
                     </p>
+                    <img class="img" src="/img/3500_2_03.jpg" alt="" width="100">
 
-                    <a href="/mascotas/<%= mascota.id %>"> Ver en detalle</a> <!--este mascota.id proviene de la constante donde aplicamos el atributo find del id -->
+                    <a class="boton2" href="/mascotas/<%= mascota.id %>" > Ver en detalle</a> <!--este mascota.id proviene de la constante donde aplicamos el atributo find del id -->
                 </article>
             <% }) %> <!--Aqui encierra el foreach-->
         </section>

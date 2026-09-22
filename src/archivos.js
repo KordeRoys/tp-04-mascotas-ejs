@@ -10,7 +10,7 @@ async function leerJson(ruta) {
         throw error;
     }
 } 
-
+ /* LA FUNCION ESCRIBIR JSON NO SE VA A USAR, ES SOLO PARA UNA PRUEBA*/
 async function escribirJson(ruta, contenido) {
     try {
         const texto = JSON.stringify(contenido, null, 2); //(contenido, null, 2): Convierte el objeto contenido en una cadena JSON con una sangría de 2 espacios para mejorar la legibilidad.

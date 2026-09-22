@@ -3,7 +3,7 @@ const express = require("express");
 const path = require("node:path");
 const expressLayouts = require("express-ejs-layouts");
 //2do! Creamos nuestras funciones en Archivos.js
-const { leerJson, escribirJson } = require("./archivos.js");
+const { leerJson } = require("./archivos.js");//*La funcionescribirJson No se va a utilizar, es solo para pruebas
 //3ro! creamos el puerto y lo probamos para ver si funciona con /api/mascotas agregando la ruta de nuestro Json para saber si se muestra
 const PORT = 3000;
 const rutaDatos = path.join(__dirname, "..", "datos", "mascotas.json");

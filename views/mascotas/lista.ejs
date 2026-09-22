@@ -1,0 +1,38 @@
+<!-- Esta es la pagina mostrada en /mascotas-->
+ <header>
+    <div>
+        <p>CATALOGO</p>
+        <h1>
+            <%= titulo %>
+        </h1>
+    </div>
+    <a class="boton" href="/mascotas/nueva">Agregar Nueva mascota</a>
+ </header>
+
+ <% if (adopcionMascotas.length===0) { %>
+    <p>No hay mascotas para mostrar</p>
+    <% } else { %>
+        <section>
+            <% adopcionMascotas.forEach((mascota) => { %>
+                <article class="tarjeta">
+                    <p>
+                        Especie: <%= mascota.especie %>
+                    </p>
+                    <p>
+                         Nombre: <%= mascota.nombre %>
+                    </p>
+                    <p>
+                        Edad: <%= mascota.edad %> años
+                    </p>
+                    <p>
+                        Descripcion: <%= mascota.descripcion %>
+                    </p>
+                    <p>
+                        Estado: <%= mascota.estado %>
+                    </p>
+
+                    <a href="/mascotas/<%= mascota.id %>"> Ver en detalle</a> <!--este mascota.id proviene de la constante donde aplicamos el atributo find del id -->
+                </article>
+            <% }) %> <!--Aqui encierra el foreach-->
+        </section>
+        <% } %> <!--Aqui encierra el else-->

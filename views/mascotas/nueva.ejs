@@ -1,0 +1,39 @@
+<!--Este es el formulario en /productos/nuevo-->
+<section class="panel-formulario">
+    <p class="etiqueta">NUEVO INGRESO</p>
+    <h1>
+        <%= titulo %>
+    </h1>
+    <% if (error) { %>
+        <p class="error" role="alert">
+            <%= error %>
+        </p>
+        <% } %>
+            <!-- action="/mascotas" envia el form a la ruta del Post-->
+            <form action="/mascotas" method="post" class="formulario">
+                <label for="nombre">Nombre</label> <!--for="nombre" es el atributo que vincula el label con el input -->
+                <input id="nombre" name="nombre" value="<%= valores.nombre ?? '' %>" required> <!-- name="nombre" es el nombre del campo -->
+
+                <label for="especie">Especie</label>
+                <input id="especie" name="especie" value="<%= valores.especie ?? '' %>" required>
+
+                <label for="edad">Edad</label> 
+                <input id="edad" name="edad" type="number" min="1" step="1" value="<%= valores.edad ?? '' %>" required>
+
+                <label for="estado">Elige su estado:</label>
+                <select name="estado" id="estado" required>
+                    <option value="">Seleccionar su estado</option>
+                    <option value="En adopción" <%= valores.estado === "En adopción" ? "selected" : "" %>>En adopción</option> <!-- (? "selected" : "") selected significa que si el valor es igual al texto, se mostrará el atributo selected -->
+                    <option value="Adoptada" <%= valores.estado === "Adoptada" ? "selected" : "" %>>Adoptada</option> 
+                    <option value="Reservada" <%= valores.estado === "Reservada" ? "selected" : "" %>>Reservada</option>
+                </select>
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" name="descripcion" rows="5" required><%= valores.descripcion ?? '' %>
+                </textarea>
+
+                <button type="submit">Guardar mascota</button>
+                
+            </form>
+            <a href="/mascotas">Volver a la pagina</a>
+</section>

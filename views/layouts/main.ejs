@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<!-- Layouts ESTRUCTURA HTML GENERAL COMPARTIDA-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        <%= titulo %> * Mascotas en Adopcion
+    </title>
+    <link rel="stylesheet" href="/css/estilos.css"> <!-- Aqui se cargan los estilos-->
+    <script src="/js/app.js" defer></script> <!-- El atributo DEFER retrasa la ejecución del script hasta que se cargue el documento -->
+</head>
+
+<body>
+    <!--  Include funciona como una funcion que permite -->
+    <%- include("../partials/encabezado") %> <!-- Aqui va a volver y tomar el encabezado de partials-->
+        <main class="contenedor"> 
+            <%- body %> <!-- No tenemos ninguna plantilla por defecto para body, es una clase por defecto que va a contener el HTML producido por la vista específica, sin éste body no se va a mostrar el contenido de la vista -->
+            <p>Contenido principal</p>
+        </main>
+        <%- include("../partials/pie") %> <!-- y por ultimo el pie o footer-->
+</body>
+
+</html>

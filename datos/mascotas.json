@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cacho",
+    "especie": "Perro",
+    "edad": 10,
+    "descripcion": "Perro de baja estatura color blanco y viejito",
+    "estado": "En adopción"
+  },
+  {
+    "id": 2,
+    "nombre": "Peter",
+    "especie": "Gato",
+    "edad": 5,
+    "descripcion": "Perro de baja estatura color blanco y viejito",
+    "estado": "En adopción"
+  },
+  {
+    "id": 3,
+    "nombre": "Cross",
+    "especie": "Perro",
+    "edad": 6,
+    "descripcion": "Perro de raza callejera color blanco amarillento",
+    "estado": "En adopción"
+  },
+  {
+    "id": 4,
+    "nombre": "Curvas",
+    "especie": "Gato",
+    "edad": 7,
+    "descripcion": "Gato de color gris con rayas blancas y negras",
+    "estado": "Reservada"
+  },
+  {
+    "id": 5,
+    "nombre": "Kiwi",
+    "especie": "Hurón",
+    "edad": 2,
+    "descripcion": "Color marron claro y una patita blanca",
+    "estado": "Adoptada"
+  }
+]

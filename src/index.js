@@ -29,7 +29,7 @@ async function main() {
 
     //5to! Empezamos con la pagina principal y agregando las configuraciones para usar los modulos expresslayouts y la direccion del main mas los recuros estatitos como carpetas y archivos
     app.get("/", (req, res) => {
-        res.status(200).render("inicio", { titulo: " Mascotas en Adopcion " });
+        res.status(200).render("inicio", { titulo: " Mascotas en Adopcion " }); 
     });
 
     app.get("/mascotas", (req, res) => {
@@ -75,7 +75,7 @@ async function main() {
             !especieMascota ||
             !descripcionMascota ||
             !estadoMascota ||
-            !Number.isFinite(edadMascota) || //!Number.isFinite(precioNumerico) significa que si el precio no es un numero finito, osea que sea un numero valido, retorna error 400
+            !Number.isFinite(edadMascota) || //!Number.isFinite(edadMascota) significa que la edad no es un numero finito, osea que sea un numero valido, retorna error 400
             edadMascota <= 0
         ) {
             return res.status(400).render("mascotas/nueva", {
@@ -90,7 +90,7 @@ async function main() {
             0, //0 es el numero inicial que le pasamos al metodo reduce
         );
 
-        //El push queda en la memoria pero a
+        //El push queda en la memoria pero no guardado en el json
         adopcionMascotas.push({ 
             id: ultimoId + 1,
             nombre: nombreMascota,
@@ -99,7 +99,7 @@ async function main() {
             descripcion: descripcionMascota,
             estado: estadoMascota,
         });        
-        res.redirect("/mascotas");//res.redirect redirige a la ruta que le pasemos, en este caso a /productos, y ahi va a mostrar la lista de productos con el nuevo producto agregado
+        res.status().redirect("/mascotas");//res.redirect redirige a la ruta que le pasemos, en este caso a /productos, y ahi va a mostrar la lista de productos con el nuevo producto agregado
     });
 
 

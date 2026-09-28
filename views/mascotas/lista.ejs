@@ -1,5 +1,5 @@
 <!-- Esta es la pagina mostrada en /mascotas-->
- <header>
+<header>
     <div>
         <h2 class="catalogo">CATALOGO</h2>
         <h1>
@@ -7,19 +7,21 @@
         </h1>
     </div>
     <a class="boton" href="/mascotas/nueva">Agregar Nueva mascota</a>
- </header>
+</header>
 
- <% if (adopcionMascotas.length===0) { %>
-    <p>No hay mascotas para mostrar</p>
+<% if (adopcionMascotas.length===0) { %>
+    <section class="grilla">
+        <p>No hay mascotas para mostrar</p>
+    </section>
     <% } else { %>
         <section class="grilla">
-            <% adopcionMascotas.forEach((mascota) => { %>
+            <% adopcionMascotas.forEach((mascota)=> { %>
                 <article class="tarjeta">
                     <p>
                         Especie: <%= mascota.especie %>
-                    </p> 
+                    </p>
                     <p>
-                         Nombre: <%= mascota.nombre %>
+                        Nombre: <%= mascota.nombre %>
                     </p>
                     <p>
                         Edad: <%= mascota.edad %> años
@@ -32,8 +34,9 @@
                     </p>
                     <img class="img" src="/img/3500_2_03.jpg" alt="" width="100">
 
-                    <a class="boton2" href="/mascotas/<%= mascota.id %>" > Ver en detalle</a> <!--este mascota.id proviene de la constante donde aplicamos el atributo find del id -->
+                    <a class="boton2" href="/mascotas/<%= mascota.id %>"> Ver en detalle</a>
+                    <!--este mascota.id proviene de la constante donde aplicamos el atributo find del id -->
                 </article>
-            <% }) %> <!--Aqui encierra el foreach-->
+                <% }) %> <!--Aqui encierra el foreach-->
         </section>
         <% } %> <!--Aqui encierra el else-->
